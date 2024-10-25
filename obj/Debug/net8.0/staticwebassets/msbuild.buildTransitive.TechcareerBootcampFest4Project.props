@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\TechcareerBootcampFest4Project.props" />
+</Project>
