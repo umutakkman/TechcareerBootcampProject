@@ -1,18 +1,22 @@
 using Microsoft.EntityFrameworkCore;
+using TechcareerBootcampFest4Project.Data.Abstract;
+using TechcareerBootcampFest4Project.Data.Concrete;
 using TechcareerBootcampFest4Project.Data.Concrete.EfCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddDbContext<KiraSitesiContext>(options =>{
-    var config = builder.Configuration;
-    var connectionString = config.GetConnectionString("sql_connection");
-    options.UseSqlite(connectionString);
+builder.Services.AddControllersWithViews();
+
+builder.Services.AddDbContext<SiteContext>(options =>{
+    options.UseSqlite(builder.Configuration["ConnectionStrings:Sql_connection"]);
 });
+
+builder.Services.AddScoped<ICarRepository, EfCarRepository>();
 
 var app = builder.Build();
 
 SeedData.TestVerileriniDoldur(app);
 
-app.MapGet("/", () => "Hello World!");
+app.MapDefaultControllerRoute();
 
 app.Run();
