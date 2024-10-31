@@ -129,3 +129,5 @@ D:\Kodlar\TechcareerBootcampFest4Project\obj\Debug\net8.0\ref\TechcareerBootcamp
 D:\Kodlar\TechcareerBootcampFest4Project\obj\Debug\net8.0\TechcareerBootcampFest4Project.sourcelink.json
 D:\Kodlar\TechcareerBootcampFest4Project\obj\Debug\net8.0\TechcareerBootcampFest4Project.RazorAssemblyInfo.cache
 D:\Kodlar\TechcareerBootcampFest4Project\obj\Debug\net8.0\TechcareerBootcampFest4Project.RazorAssemblyInfo.cs
+D:\Kodlar\TechcareerBootcampFest4Project\bin\Debug\net8.0\libman.json
+D:\Kodlar\TechcareerBootcampFest4Project\bin\Debug\net8.0\TechcareerBootcampFest4Project.staticwebassets.runtime.json

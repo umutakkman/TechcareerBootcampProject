@@ -1,11 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/lib/bootstrap-icons/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="~/css/style.css">
     <title>Document</title>
 </head>
+
 <body>
-    @RenderBody()
+    <nav class="navbar navbar-expand-lg" style="background-color: #0D1A26; border-bottom: 1px solid #0D1A26;" data-bs-theme="dark">
+        <div class="container">
+            <a class="navbar-brand my-3" href="/">
+                <i class="bi bi-car-front-fill"></i>
+                Araba Kiralama
+            </a>
+            @if (ViewContext.RouteData.Values["controller"]?.ToString() == "Home" &&
+                 ViewContext.RouteData.Values["action"]?.ToString() == "Index")
+            {
+            <form asp-action="Index" method="get" class="d-flex">
+                    <input type="search" class="form-control me-2" name="searchString" value="@ViewBag.searchString"
+                        placeholder="Ara">
+                    <button type="submit" class="btn btn-secondary">Ara</button>
+            </form>
+            }
+            <ul class="navbar-nav ms-auto">
+                @if(User.Identity!.IsAuthenticated)
+                {
+                    <li class="nav-item">
+                        <a href="" class="nav-link">@User.Identity!.Name</a>
+                    </li>
+                    <li class="nav-item">
+                        <a asp-controller="Users" asp-action="Logout" class="nav-link">Çıkış Yap</a>
+                    </li>
+                }
+                else
+                {
+                    <li class="nav-item">
+                        <a asp-controller="Users" asp-action="Login" class="nav-link">Giriş Yap</a>
+                    </li>
+                    <li class="nav-item">
+                        <a asp-controller="Users" asp-action="Register" class="nav-link">Kayıt Ol</a>
+                    </li>
+                }
+            </ul>
+        </div>
+    </nav>
+    <div class="container mt-3">
+        @RenderBody()
+    </div>
 </body>
 </html>
