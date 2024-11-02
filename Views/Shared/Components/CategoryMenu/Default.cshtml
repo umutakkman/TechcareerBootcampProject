@@ -1,0 +1,66 @@
+@model List<Category>
+<div class="filter-section">
+    <form method="get" asp-controller="Home" asp-action="Index">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="brand">Marka</label>
+                    <select id="brand" name="brand" class="form-control">
+                            <option value="">Hepsi</option>
+                        @foreach (var category in Model.Where(c => c.BrandCategory != null))
+                        {
+                            @if (ViewBag.Brand == category.BrandCategory)
+                            {
+                                <option value="@category.BrandCategory" selected>@category.BrandCategory</option>
+                            }
+                            else
+                            {
+                                <option value="@category.BrandCategory">@category.BrandCategory</option>
+                            }
+                        }
+                    </select>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="type">Tür</label>
+                    <select id="type" name="type" class="form-control">
+                        <option value="">Hepsi</option>
+                        @foreach (var category in Model.Where(c => c.TypeCategory != null))
+                        {
+                            @if (ViewBag.Type == category.TypeCategory)
+                            {
+                                <option value="@category.TypeCategory" selected>@category.TypeCategory</option>
+                            }
+                            else
+                            {
+                                <option value="@category.TypeCategory">@category.TypeCategory</option>
+                            }
+                        }
+                    </select>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="seats">Koltuk Sayısı</label>
+                    <select id="seats" name="seats" class="form-control">
+                        <option value="">Hepsi</option>
+                        @foreach (var category in Model.Where(c => c.SeatCategory != null))
+                        {
+                            @if (ViewBag.Seats == category.SeatCategory)
+                            {
+                                <option value="@category.SeatCategory" selected>@category.SeatCategory</option>
+                            }
+                            else
+                            {
+                                <option value="@category.SeatCategory">@category.SeatCategory</option>
+                            }
+                        }
+                    </select>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

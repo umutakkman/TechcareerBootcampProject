@@ -1,0 +1,56 @@
+@model Car
+
+<div class="card shadow-lg mb-4">
+    <div class="card-header text-center bg-dark text-white">
+        <h1 class="h3 m-0">@Model.Title</h1>
+    </div>
+    <div class="card-body p-4">
+        <div class="row g-3">
+            <div class="col-md-4 text-center">
+                <p><img src="~/img/@Model.Image" alt="@Model.Title" class="img-fluid rounded shadow-sm" /></p>
+            </div>
+            <div class="col-md-8">
+                <table class="table table-borderless">
+                    <tbody>
+                        <tr>
+                            <th class="text-muted" style="width: 40%;">Marka:</th>
+                            <td>@Model.Brand</td>
+                        </tr>
+                        <tr>
+                            <th class="text-muted">Tür:</th>
+                            <td>@Model.Type</td>
+                        </tr>
+                        <tr>
+                            <th class="text-muted">Model:</th>
+                            <td>@Model.Model</td>
+                        </tr>
+                        <tr>
+                            <th class="text-muted">Koltuk Sayısı:</th>
+                            <td>@Model.Seats</td>
+                        </tr>
+                        <tr>
+                            <th class="text-muted">Günlük Kira:</th>
+                            <td>@Model.RentPrice <span class="text-muted">₺</span></td>
+                        </tr>
+                        @if (User.Identity!.IsAuthenticated)
+                        {
+                        <tr>
+                            <td colspan="2" class="text-end">
+                                <button class="btn mt-3 px-4" style="background-color: #FF5722; color: white;">İletişime Geç</button>
+                            </td>
+                        </tr>
+                        }
+                        else
+                        {
+                        <tr>
+                            <td colspan="2" class="text-end">
+                                <small class="text-muted">Araba kiralamak için <a href="/users/login">giriş yap</a>malısınız.</small>
+                            </td>
+                        </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

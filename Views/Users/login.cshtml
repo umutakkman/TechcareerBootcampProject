@@ -1,0 +1,31 @@
+@model LoginViewModel
+
+<div class="d-flex justify-content-center align-items-center pt-4">
+    <div class="col-md-4">
+        <div class="card shadow-lg">
+            <div class="card-body p-4">
+                <form asp-action="Login" method="post">
+                    <div asp-validation-summary="All" class="text-danger"></div>
+                    <div class="mb-4">
+                        <label asp-for="Username" class="form-label">Kullanıcı Adı</label>
+                        <input asp-for="Username" class="form-control" placeholder="Kullanıcı adınızı girin">
+                        <span asp-validation-for="Username" class="text-danger"></span>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <label asp-for="Password" class="form-label">Şifre</label>
+                        <input asp-for="Password" type="password" class="form-control" placeholder="Şifrenizi girin">
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                    </div>
+                    
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-lg" style="background-color: #FF5722; color: white;">Giriş Yap</button>
+                    </div>
+                </form>
+            </div>
+            <div class="card-footer text-center py-3">
+                <small class="text-muted">Hesabınız yok mu? <a href="/users/register">Kayıt Ol</a></small>
+            </div>
+        </div>
+    </div>
+</div>
