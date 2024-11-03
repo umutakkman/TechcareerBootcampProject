@@ -1,0 +1,73 @@
+@model CarViewModel
+<h2 class="text-center my-4">Araba Düzenle</h2>
+<hr class="mb-4">
+
+<form asp-controller="Admin" asp-action="Edit" method="post" enctype="multipart/form-data">
+    <input type="hidden" asp-for="CarID" />
+
+    <div class="mb-4">
+        <label asp-for="Title" class="form-label fw-bold">Araba Başlığı</label>
+        <input asp-for="Title" class="form-control shadow-sm" placeholder="Araba başlığını girin...">
+        <span asp-validation-for="Title" class="text-danger"></span>
+    </div>
+
+    <div class="mb-4 form-group">
+        <label asp-for="ImageFile" class="form-label fw-bold">Görsel Yükle</label>
+        <input type="file" asp-for="ImageFile" class="form-control shadow-sm">
+        <span asp-validation-for="ImageFile" class="text-danger"></span>
+    </div>
+
+    @if (!string.IsNullOrEmpty(Model.ExistingImage))
+    {
+        <div class="mb-4">
+            <img src="~/img/@Model.ExistingImage" style="width: 100px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.2);" alt="Mevcut Görsel">
+            <input type="hidden" asp-for="ExistingImage">
+        </div>
+    }
+
+    <div class="mb-4">
+        <label asp-for="BrandCategory" class="form-label fw-bold">Marka</label>
+        <select asp-for="BrandCategory" asp-items="@(new SelectList(ViewBag.BrandCategory))" class="form-select shadow-sm">
+            <option value="">Seçiniz</option>
+        </select>
+        <span asp-validation-for="BrandCategory" class="text-danger"></span>
+    </div>
+
+    <div class="mb-4">
+        <label asp-for="Model" class="form-label fw-bold">Model</label>
+        <input asp-for="Model" class="form-control shadow-sm" placeholder="Modeli girin...">
+        <span asp-validation-for="Model" class="text-danger"></span>
+    </div>
+
+    <div class="mb-4">
+        <label asp-for="TypeCategory" class="form-label fw-bold">Tip</label>
+        <select asp-for="TypeCategory" asp-items="@(new SelectList(ViewBag.TypeCategory))" class="form-select shadow-sm">
+            <option value="">Seçiniz</option>
+        </select>
+        <span asp-validation-for="TypeCategory" class="text-danger"></span>
+    </div>
+
+    <div class="mb-4">
+        <label asp-for="Seats" class="form-label fw-bold">Koltuk Sayısı</label>
+        <select asp-for="Seats" asp-items="@(new SelectList(ViewBag.SeatCategory))" class="form-select shadow-sm">
+            <option value="">Seçiniz</option>
+        </select>
+        <span asp-validation-for="Seats" class="text-danger"></span>
+    </div>
+
+    <div class="mb-4">
+        <label asp-for="RentPrice" class="form-label fw-bold">Kira Fiyatı</label>
+        <input asp-for="RentPrice" class="form-control shadow-sm" placeholder="Fiyatı girin...">
+        <span asp-validation-for="RentPrice" class="text-danger"></span>
+    </div>
+
+    <div class="mb-4 form-check">
+        <input asp-for="IsActive" class="form-check-input" id="IsActive">
+        <label asp-for="IsActive" class="form-check-label" for="IsActive">Aktif mi?</label>
+    </div>
+
+    <div class="d-flex justify-content-between">
+        <button type="submit" class="btn btn-primary">Kaydet</button>
+        <a asp-action="CarList" class="btn btn-secondary">İptal</a>
+    </div>
+</form>

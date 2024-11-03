@@ -18,5 +18,17 @@ namespace TechcareerBootcampFest4Project.Data.Concrete
             _context.Cars.Add(car);
             _context.SaveChanges();
         }
+
+        public void DeleteCar(Car car)
+        {
+            _context.Cars.Remove(car);
+            _context.SaveChanges();
+        }
+
+        public void UpdateCar(Car car)
+        {
+            _context.Cars.Update(car);
+            _context.SaveChanges();
+        }
     }
 }

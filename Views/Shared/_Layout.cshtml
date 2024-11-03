@@ -1,55 +1,72 @@
-<!DOCTYPE html>
-<html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="~/lib/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="~/lib/bootstrap-icons/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="~/css/style.css">
-    <title>Document</title>
+    <title>Bitirme Projesi</title>
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg" style="background-color: #0D1A26; border-bottom: 1px solid #0D1A26;" data-bs-theme="dark">
-        <div class="container">
-            <a class="navbar-brand my-3" href="/">
-                <i class="bi bi-car-front-fill"></i>
-                Araba Kiralama
+    <nav class="navbar navbar-expand-lg" style="background-color: #0D1A26; padding: 0.8rem;" data-bs-theme="dark">
+        <div class="container d-flex justify-content-between align-items-center">
+            <a class="navbar-brand d-flex align-items-center me-auto" href="/" style="font-size: 1.3rem; font-weight: bold; color: #EDEDED;">
+                <i class="bi bi-car-front-fill fs-5 me-2"></i> Araba Kiralama
             </a>
+
             @if (ViewContext.RouteData.Values["controller"]?.ToString() == "Home" &&
                  ViewContext.RouteData.Values["action"]?.ToString() == "Index")
             {
-            <form asp-action="Index" method="get" class="d-flex">
+                <form asp-action="Index" method="get" class="d-flex pt-3" style="width: 40%;">
                     <input type="search" class="form-control me-2" name="searchString" value="@ViewBag.searchString"
-                        placeholder="Ara">
-                    <button type="submit" class="btn btn-secondary">Ara</button>
-            </form>
+                           placeholder="Ara" style="height: 2rem; font-size: 0.9rem;">
+                    <button type="submit" class="btn btn-secondary" style="height: 2rem; font-size: 0.9rem;">Ara</button>
+                </form>
             }
+
+            @if (ViewContext.RouteData.Values["controller"]?.ToString() == "Admin" &&
+                 ViewContext.RouteData.Values["action"]?.ToString() == "CarList")
+            {
+                <form asp-controller="admin" asp-action="carlist" method="get" class="d-flex pt-3" style="width: 40%;">
+                    <input type="search" class="form-control me-2" name="searchString" value="@ViewBag.searchString"
+                           placeholder="Ara" style="height: 2rem; font-size: 0.9rem;">
+                    <button type="submit" class="btn btn-secondary" style="height: 2rem; font-size: 0.9rem;">Ara</button>
+                </form>
+            }
+
             <ul class="navbar-nav ms-auto">
+                @if (User.Identity!.Name == "admin")
+                {
+                    <li class="nav-item">
+                        <a asp-controller="admin" asp-action="carlist" class="nav-link text-light" style="font-size: 1rem;">Araba Listesi</a>
+                    </li>
+                }
+
                 @if(User.Identity!.IsAuthenticated)
                 {
                     <li class="nav-item">
-                        <a href="" class="nav-link">@User.Identity!.Name</a>
+                        <a asp-controller="Users" asp-action="Profile" class="nav-link text-light" style="font-size: 1rem;">
+                            <i class="bi bi-person-circle"></i> @User.Identity!.Name
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a asp-controller="Users" asp-action="Logout" class="nav-link">Çıkış Yap</a>
+                        <a asp-controller="Users" asp-action="Logout" class="nav-link text-light" style="font-size: 1rem;">Çıkış Yap</a>
                     </li>
                 }
                 else
                 {
                     <li class="nav-item">
-                        <a asp-controller="Users" asp-action="Login" class="nav-link">Giriş Yap</a>
+                        <a asp-controller="Users" asp-action="Login" class="nav-link text-light" style="font-size: 1rem;">Giriş Yap</a>
                     </li>
                     <li class="nav-item">
-                        <a asp-controller="Users" asp-action="Register" class="nav-link">Kayıt Ol</a>
+                        <a asp-controller="Users" asp-action="Register" class="nav-link text-light" style="font-size: 1rem;">Kayıt Ol</a>
                     </li>
                 }
             </ul>
         </div>
     </nav>
+
     <div class="container mt-3">
         @RenderBody()
     </div>
 </body>
-</html>

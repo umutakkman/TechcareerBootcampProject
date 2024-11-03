@@ -1,0 +1,28 @@
+@model RentalViewModel
+
+<div class="container my-5">
+    <h2 class="text-center mb-4">Kiralama Onayı</h2>
+
+    <div class="row justify-content-center">
+        <div class="col-md-6 p-4 border rounded shadow-sm bg-light">
+            <h4 style="color: #0D1A26">@Model.Car.Title</h4>
+            <p><strong>Günlük Kira:</strong> <span class="text-secondary">@Model.Car.RentPrice</span> ₺</p>
+            <p><strong>Kiralama Süresi:</strong> <span class="text-secondary">@Model.RentalDays</span> gün</p>
+            <p><strong>Toplam Tutar:</strong> <span class="text-success">@Model.TotalPrice</span> ₺</p>
+            
+            <form onsubmit="showSuccessAlert(event)">
+                <button type="submit" class="btn btn-success w-100 mt-3">Onaylıyorum</button>
+            </form>
+            
+            <a asp-action="Renting" asp-route-carId="@Model.Car.CarID" class="btn btn-secondary w-100 mt-2">Geri Dön</a>
+        </div>
+    </div>
+</div>
+
+<script>
+    function showSuccessAlert(event) {
+        event.preventDefault();
+        alert("Kiralama işlemi başarıyla gerçekleşti");
+        window.location.href = '/Home/Index';
+    }
+</script>

@@ -5,16 +5,64 @@
       "PackagePath": "staticwebassets\\css\\style.css"
     },
     {
-      "Id": "D:\\Kodlar\\TechcareerBootcampFest4Project\\wwwroot\\img\\g-class.png",
-      "PackagePath": "staticwebassets\\img\\g-class.png"
+      "Id": "D:\\Kodlar\\TechcareerBootcampFest4Project\\wwwroot\\img\\911.png",
+      "PackagePath": "staticwebassets\\img\\911.png"
     },
     {
-      "Id": "D:\\Kodlar\\TechcareerBootcampFest4Project\\wwwroot\\img\\golf.png",
-      "PackagePath": "staticwebassets\\img\\golf.png"
+      "Id": "D:\\Kodlar\\TechcareerBootcampFest4Project\\wwwroot\\img\\altima.png",
+      "PackagePath": "staticwebassets\\img\\altima.png"
     },
     {
-      "Id": "D:\\Kodlar\\TechcareerBootcampFest4Project\\wwwroot\\img\\m5.png",
-      "PackagePath": "staticwebassets\\img\\m5.png"
+      "Id": "D:\\Kodlar\\TechcareerBootcampFest4Project\\wwwroot\\img\\c-class.png",
+      "PackagePath": "staticwebassets\\img\\c-class.png"
+    },
+    {
+      "Id": "D:\\Kodlar\\TechcareerBootcampFest4Project\\wwwroot\\img\\corolla.png",
+      "PackagePath": "staticwebassets\\img\\corolla.png"
+    },
+    {
+      "Id": "D:\\Kodlar\\TechcareerBootcampFest4Project\\wwwroot\\img\\cr-v.png",
+      "PackagePath": "staticwebassets\\img\\cr-v.png"
+    },
+    {
+      "Id": "D:\\Kodlar\\TechcareerBootcampFest4Project\\wwwroot\\img\\elantra.png",
+      "PackagePath": "staticwebassets\\img\\elantra.png"
+    },
+    {
+      "Id": "D:\\Kodlar\\TechcareerBootcampFest4Project\\wwwroot\\img\\evoque.png",
+      "PackagePath": "staticwebassets\\img\\evoque.png"
+    },
+    {
+      "Id": "D:\\Kodlar\\TechcareerBootcampFest4Project\\wwwroot\\img\\huracan.png",
+      "PackagePath": "staticwebassets\\img\\huracan.png"
+    },
+    {
+      "Id": "D:\\Kodlar\\TechcareerBootcampFest4Project\\wwwroot\\img\\model-3.png",
+      "PackagePath": "staticwebassets\\img\\model-3.png"
+    },
+    {
+      "Id": "D:\\Kodlar\\TechcareerBootcampFest4Project\\wwwroot\\img\\mustang.png",
+      "PackagePath": "staticwebassets\\img\\mustang.png"
+    },
+    {
+      "Id": "D:\\Kodlar\\TechcareerBootcampFest4Project\\wwwroot\\img\\q7.png",
+      "PackagePath": "staticwebassets\\img\\q7.png"
+    },
+    {
+      "Id": "D:\\Kodlar\\TechcareerBootcampFest4Project\\wwwroot\\img\\tahoe.png",
+      "PackagePath": "staticwebassets\\img\\tahoe.png"
+    },
+    {
+      "Id": "D:\\Kodlar\\TechcareerBootcampFest4Project\\wwwroot\\img\\tiguan.png",
+      "PackagePath": "staticwebassets\\img\\tiguan.png"
+    },
+    {
+      "Id": "D:\\Kodlar\\TechcareerBootcampFest4Project\\wwwroot\\img\\wrangler.png",
+      "PackagePath": "staticwebassets\\img\\wrangler.png"
+    },
+    {
+      "Id": "D:\\Kodlar\\TechcareerBootcampFest4Project\\wwwroot\\img\\x5.png",
+      "PackagePath": "staticwebassets\\img\\x5.png"
     },
     {
       "Id": "D:\\Kodlar\\TechcareerBootcampFest4Project\\wwwroot\\lib\\bootstrap-icons\\bootstrap-icons.svg",

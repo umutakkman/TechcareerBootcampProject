@@ -7,5 +7,7 @@ namespace TechcareerBootcampFest4Project.Data.Abstract
     {
         IQueryable<Car> Cars { get; }
         void AddCar(Car car);
+        void DeleteCar(Car car);
+        void UpdateCar(Car car);
     }
 }

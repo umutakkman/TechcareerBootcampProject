@@ -1,0 +1,23 @@
+@model RentalViewModel
+
+<div class="container my-5">
+    <h2 class="text-center mb-4">Araç Kiralama</h2>
+    
+    <div class="row justify-content-center">
+        <div class="col-md-6 p-4 border rounded shadow-sm bg-light">
+            <h4 style="color:#FF5722">@Model.Car.Title</h4>
+            <p class="fw-bold">Günlük Araç Kirası: <span class="text-secondary">@Model.Car.RentPrice</span> ₺</p>
+            
+            <form asp-action="Confirm" asp-controller="Home" method="post">
+                <input type="hidden" asp-for="CarId" value="@Model.Car.CarID" />
+                
+                <div class="mb-3">
+                    <label asp-for="RentalDays" class="form-label fw-bold">Kaç gün kiralamak istersiniz?</label>
+                    <input asp-for="RentalDays" class="form-control shadow-sm" type="number" min="1" step="1" placeholder="Gün sayısını girin" required>
+                </div>
+                
+                <button type="submit" class="btn w-100 mt-3" style="background-color: #FF5722; color: white;">İleri</button>
+            </form>
+        </div>
+    </div>
+</div>

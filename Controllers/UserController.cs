@@ -31,6 +31,32 @@ namespace TechcareerBootcampFest4Project.Controllers{
             return View();
         }
 
+        [HttpPost]
+        public async Task<IActionResult> Register(RegisterViewModel model)
+        {
+            if(ModelState.IsValid)
+            {
+                var user = await _userRepository.Users.FirstOrDefaultAsync(x => x.Username == model.Username || x.Email == model.Email);
+
+                if(user == null)
+                {
+                    _userRepository.AddUser(new Entity.User
+                    {
+                        NameSurname = model.NameSurname,
+                        Username = model.Username,
+                        Email = model.Email,
+                        Password = model.Password
+                    });
+                    return RedirectToAction("Login");
+                }
+                else
+                {
+                    ModelState.AddModelError("","Kullanıcı adı veya email adresi kullanılmaktadır.");
+                }
+            }
+            return View(model);
+        }
+
         public async Task<IActionResult> Logout()
         {
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
@@ -45,11 +71,13 @@ namespace TechcareerBootcampFest4Project.Controllers{
                 
                 if(isUser != null)
                 {
-                    var userClaims = new List<Claim>();
-
-                    userClaims.Add(new Claim(ClaimTypes.NameIdentifier, isUser.UserID.ToString()));
-                    userClaims.Add(new Claim(ClaimTypes.Name, isUser.Username ?? ""));
-                    userClaims.Add(new Claim(ClaimTypes.GivenName, isUser.NameSurname ?? ""));
+                    var userClaims = new List<Claim>
+                    {
+                        new Claim(ClaimTypes.NameIdentifier, isUser.UserID.ToString()),
+                        new Claim(ClaimTypes.Name, isUser.Username ?? ""),
+                        new Claim(ClaimTypes.GivenName, isUser.NameSurname ?? ""),
+                        new Claim(ClaimTypes.Email, isUser.Email ?? "")
+                    };
 
                     if(isUser.Username == "admin")
                     {
@@ -79,6 +107,11 @@ namespace TechcareerBootcampFest4Project.Controllers{
                 }
             }
             return View(model);
+        }
+
+        public IActionResult Profile()
+        {
+            return View();
         }
     }
 }
