@@ -26,43 +26,6 @@ namespace TechcareerBootcampFest4Project.Controllers{
             return View();
         }
 
-        public IActionResult Register()
-        {
-            return View();
-        }
-
-        [HttpPost]
-        public async Task<IActionResult> Register(RegisterViewModel model)
-        {
-            if(ModelState.IsValid)
-            {
-                var user = await _userRepository.Users.FirstOrDefaultAsync(x => x.Username == model.Username || x.Email == model.Email);
-
-                if(user == null)
-                {
-                    _userRepository.AddUser(new Entity.User
-                    {
-                        NameSurname = model.NameSurname,
-                        Username = model.Username,
-                        Email = model.Email,
-                        Password = model.Password
-                    });
-                    return RedirectToAction("Login");
-                }
-                else
-                {
-                    ModelState.AddModelError("","Kullanıcı adı veya email adresi kullanılmaktadır.");
-                }
-            }
-            return View(model);
-        }
-
-        public async Task<IActionResult> Logout()
-        {
-            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
-            return RedirectToAction("Index", "Home");
-        }
-
         [HttpPost]
         public async Task<IActionResult> Login(LoginViewModel model){
             if(ModelState.IsValid)
@@ -107,6 +70,43 @@ namespace TechcareerBootcampFest4Project.Controllers{
                 }
             }
             return View(model);
+        }
+
+        public IActionResult Register()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Register(RegisterViewModel model)
+        {
+            if(ModelState.IsValid)
+            {
+                var user = await _userRepository.Users.FirstOrDefaultAsync(x => x.Username == model.Username || x.Email == model.Email);
+
+                if(user == null)
+                {
+                    _userRepository.AddUser(new Entity.User
+                    {
+                        NameSurname = model.NameSurname,
+                        Username = model.Username,
+                        Email = model.Email,
+                        Password = model.Password
+                    });
+                    return RedirectToAction("Login");
+                }
+                else
+                {
+                    ModelState.AddModelError("","Kullanıcı adı veya email adresi kullanılmaktadır.");
+                }
+            }
+            return View(model);
+        }
+
+        public async Task<IActionResult> Logout()
+        {
+            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+            return RedirectToAction("Index", "Home");
         }
 
         public IActionResult Profile()

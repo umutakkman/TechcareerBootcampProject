@@ -34,11 +34,31 @@
                 </form>
             }
 
+            @if (ViewContext.RouteData.Values["controller"]?.ToString() == "Admin" &&
+                 ViewContext.RouteData.Values["action"]?.ToString() == "UserList")
+            {
+                <form asp-controller="admin" asp-action="userlist" method="get" class="d-flex pt-3" style="width: 40%;">
+                    <input type="search" class="form-control me-2" name="searchString" value="@ViewBag.searchString"
+                           placeholder="Ara" style="height: 2rem; font-size: 0.9rem;">
+                    <button type="submit" class="btn btn-secondary" style="height: 2rem; font-size: 0.9rem;">Ara</button>
+                </form>
+            }
+
             <ul class="navbar-nav ms-auto">
                 @if (User.Identity!.Name == "admin")
                 {
                     <li class="nav-item">
-                        <a asp-controller="admin" asp-action="carlist" class="nav-link text-light" style="font-size: 1rem;">Araba Listesi</a>
+                        <a class="nav-link" asp-controller="Admin" asp-action="CarList">
+                            <i class="bi bi-list-ul"></i> Araba Listesi
+                        </a>
+                    </li>
+                }
+                @if (User.Identity!.Name == "admin")
+                {
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="Admin" asp-action="UserList">
+                            <i class="bi bi-people-fill"></i> Kullanıcı Listesi
+                        </a>
                     </li>
                 }
 

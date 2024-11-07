@@ -14,12 +14,14 @@ namespace TechcareerBootcampFest4Project.Controllers
         private readonly ICarRepository _carRepository;
         private readonly ICategoryRepository _categoryRepository;
 
-        public AdminController(ICarRepository carRepository, SiteContext context, ICategoryRepository categoryRepository)
+        private readonly IUserRepository _userRepository;
+
+        public AdminController(ICarRepository carRepository, SiteContext context, ICategoryRepository categoryRepository, IUserRepository userRepository)
         {
             _carRepository = carRepository;
             _categoryRepository = categoryRepository;
+            _userRepository = userRepository;
         }
-
         public async Task<IActionResult> CarList(string searchString)
         {
             if (User.Identity!.Name == "admin")
@@ -39,7 +41,7 @@ namespace TechcareerBootcampFest4Project.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> Create()
+        public async Task<IActionResult> CreateCar()
         {
             if (User.Identity!.Name != "admin")
                 return RedirectToAction("Index", "Home");
@@ -67,7 +69,7 @@ namespace TechcareerBootcampFest4Project.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(CarViewModel viewModel)
+        public async Task<IActionResult> CreateCar(CarViewModel viewModel)
         {
             if (User.Identity!.Name != "admin")
                 return RedirectToAction("Index", "Home");
@@ -157,7 +159,7 @@ namespace TechcareerBootcampFest4Project.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> Edit(int id)
+        public async Task<IActionResult> EditCar(int id)
         {
             if (User.Identity!.Name != "admin")
                 return RedirectToAction("Index", "Home");
@@ -203,7 +205,7 @@ namespace TechcareerBootcampFest4Project.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, CarViewModel viewModel)
+        public async Task<IActionResult> EditCar(int id, CarViewModel viewModel)
         {
             if (User.Identity!.Name != "admin")
                 return RedirectToAction("Index", "Home");
@@ -302,7 +304,7 @@ namespace TechcareerBootcampFest4Project.Controllers
             return RedirectToAction("CarList");
         }
 
-        public async Task<IActionResult> Delete(int id)
+        public async Task<IActionResult> DeleteCar(int id)
         {
             if (User.Identity!.Name == "admin")
             {
@@ -321,7 +323,7 @@ namespace TechcareerBootcampFest4Project.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Delete(int id, Car car)
+        public async Task<IActionResult> DeleteCar(int id, Car car)
         {
             if (User.Identity!.Name == "admin")
             {
@@ -339,5 +341,63 @@ namespace TechcareerBootcampFest4Project.Controllers
                 return RedirectToAction("Index", "Home");
             }
         }
+
+        public async Task<IActionResult> UserList(string searchString)
+        {
+            if (User.Identity!.Name == "admin")
+            {
+                var users = await _userRepository.Users.ToListAsync();
+                if (!string.IsNullOrEmpty(searchString))
+                {
+                    ViewBag.searchString = searchString;
+                    users = users.Where(c => c.Username!.ToLower().Contains(searchString!.ToLower())).ToList();
+                }
+                users = users.Where(c => c.Username != "admin").ToList();
+                return View(users);
+            }
+            else
+            {
+                return RedirectToAction("Index", "Home");
+            }
+        }
+
+        public async Task<IActionResult> DeleteUser(int id)
+        {
+            if (User.Identity!.Name == "admin")
+            {
+                var user = await _userRepository.Users.FirstOrDefaultAsync(c => c.UserID == id);
+                if (user == null)
+                {
+                    return NotFound();
+                }
+
+                return View(user);
+            }
+            else
+            {
+                return RedirectToAction("Index", "Home");
+            }
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> DeleteUser(int id, Car car)
+        {
+            if (User.Identity!.Name == "admin")
+            {
+                var existingUser = await _userRepository.Users.FirstOrDefaultAsync(c => c.UserID == id);
+                if (existingUser == null)
+                {
+                    return NotFound();
+                }
+
+                _userRepository.DeleteUser(existingUser);
+                return RedirectToAction("CarList");
+            }
+            else
+            {
+                return RedirectToAction("Index", "Home");
+            }
+        }
+
     }
 }

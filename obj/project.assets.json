@@ -2386,11 +2386,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Kodlar\\TechcareerBootcampFest4Project\\TechcareerBootcampFest4Project.csproj",
+      "projectUniqueName": "d:\\Kodlar\\TechcareerBootcampProject\\TechcareerBootcampFest4Project.csproj",
       "projectName": "TechcareerBootcampFest4Project",
-      "projectPath": "D:\\Kodlar\\TechcareerBootcampFest4Project\\TechcareerBootcampFest4Project.csproj",
+      "projectPath": "d:\\Kodlar\\TechcareerBootcampProject\\TechcareerBootcampFest4Project.csproj",
       "packagesPath": "C:\\Users\\akman\\.nuget\\packages\\",
-      "outputPath": "D:\\Kodlar\\TechcareerBootcampFest4Project\\obj\\",
+      "outputPath": "d:\\Kodlar\\TechcareerBootcampProject\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\akman\\AppData\\Roaming\\NuGet\\NuGet.Config"

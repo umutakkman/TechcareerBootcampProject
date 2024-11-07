@@ -9,71 +9,79 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = TechcareerBootcampFest4Project
 build_property.RootNamespace = TechcareerBootcampFest4Project
-build_property.ProjectDir = D:\Kodlar\TechcareerBootcampFest4Project\
+build_property.ProjectDir = D:\Kodlar\TechcareerBootcampProject\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = D:\Kodlar\TechcareerBootcampFest4Project
+build_property.MSBuildProjectDirectory = D:\Kodlar\TechcareerBootcampProject
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/Kodlar/TechcareerBootcampFest4Project/Views/Admin/carlist.cshtml]
+[D:/Kodlar/TechcareerBootcampProject/Views/Admin/carlist.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cY2FybGlzdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Kodlar/TechcareerBootcampFest4Project/Views/Admin/create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cY3JlYXRlLmNzaHRtbA==
+[D:/Kodlar/TechcareerBootcampProject/Views/Admin/createCar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cY3JlYXRlQ2FyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Kodlar/TechcareerBootcampFest4Project/Views/Admin/delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cZGVsZXRlLmNzaHRtbA==
+[D:/Kodlar/TechcareerBootcampProject/Views/Admin/deleteCar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cZGVsZXRlQ2FyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Kodlar/TechcareerBootcampFest4Project/Views/Admin/edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cZWRpdC5jc2h0bWw=
+[D:/Kodlar/TechcareerBootcampProject/Views/Admin/deleteUser.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cZGVsZXRlVXNlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Kodlar/TechcareerBootcampFest4Project/Views/Home/confirm.cshtml]
+[D:/Kodlar/TechcareerBootcampProject/Views/Admin/editCar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cZWRpdENhci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Kodlar/TechcareerBootcampProject/Views/Admin/userlist.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cdXNlcmxpc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Kodlar/TechcareerBootcampProject/Views/Home/confirm.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxjb25maXJtLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Kodlar/TechcareerBootcampFest4Project/Views/Home/details.cshtml]
+[D:/Kodlar/TechcareerBootcampProject/Views/Home/details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxkZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Kodlar/TechcareerBootcampFest4Project/Views/Home/index.cshtml]
+[D:/Kodlar/TechcareerBootcampProject/Views/Home/index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxpbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Kodlar/TechcareerBootcampFest4Project/Views/Home/renting.cshtml]
+[D:/Kodlar/TechcareerBootcampProject/Views/Home/renting.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxyZW50aW5nLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Kodlar/TechcareerBootcampFest4Project/Views/Shared/Components/CategoryMenu/Default.cshtml]
+[D:/Kodlar/TechcareerBootcampProject/Views/Shared/Components/CategoryMenu/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcQ2F0ZWdvcnlNZW51XERlZmF1bHQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Kodlar/TechcareerBootcampFest4Project/Views/Shared/_Layout.cshtml]
+[D:/Kodlar/TechcareerBootcampProject/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Kodlar/TechcareerBootcampFest4Project/Views/Users/login.cshtml]
+[D:/Kodlar/TechcareerBootcampProject/Views/Users/login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcbG9naW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Kodlar/TechcareerBootcampFest4Project/Views/Users/profile.cshtml]
+[D:/Kodlar/TechcareerBootcampProject/Views/Users/profile.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNccHJvZmlsZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Kodlar/TechcareerBootcampFest4Project/Views/Users/register.cshtml]
+[D:/Kodlar/TechcareerBootcampProject/Views/Users/register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNccmVnaXN0ZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Kodlar/TechcareerBootcampFest4Project/Views/_ViewImports.cshtml]
+[D:/Kodlar/TechcareerBootcampProject/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Kodlar/TechcareerBootcampFest4Project/Views/_ViewStart.cshtml]
+[D:/Kodlar/TechcareerBootcampProject/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

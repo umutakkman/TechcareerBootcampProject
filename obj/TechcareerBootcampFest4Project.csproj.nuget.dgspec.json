@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Kodlar\\TechcareerBootcampFest4Project\\TechcareerBootcampFest4Project.csproj": {}
+    "D:\\Kodlar\\TechcareerBootcampProject\\TechcareerBootcampFest4Project.csproj": {}
   },
   "projects": {
-    "D:\\Kodlar\\TechcareerBootcampFest4Project\\TechcareerBootcampFest4Project.csproj": {
+    "D:\\Kodlar\\TechcareerBootcampProject\\TechcareerBootcampFest4Project.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Kodlar\\TechcareerBootcampFest4Project\\TechcareerBootcampFest4Project.csproj",
+        "projectUniqueName": "D:\\Kodlar\\TechcareerBootcampProject\\TechcareerBootcampFest4Project.csproj",
         "projectName": "TechcareerBootcampFest4Project",
-        "projectPath": "D:\\Kodlar\\TechcareerBootcampFest4Project\\TechcareerBootcampFest4Project.csproj",
+        "projectPath": "D:\\Kodlar\\TechcareerBootcampProject\\TechcareerBootcampFest4Project.csproj",
         "packagesPath": "C:\\Users\\akman\\.nuget\\packages\\",
-        "outputPath": "D:\\Kodlar\\TechcareerBootcampFest4Project\\obj\\",
+        "outputPath": "D:\\Kodlar\\TechcareerBootcampProject\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\akman\\AppData\\Roaming\\NuGet\\NuGet.Config"

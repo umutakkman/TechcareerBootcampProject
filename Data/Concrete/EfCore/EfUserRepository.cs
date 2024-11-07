@@ -18,5 +18,11 @@ namespace TechcareerBootcampFest4Project.Data.Concrete
             _context.Users.Add(User);
             _context.SaveChanges();
         }
+
+        public void DeleteUser(User User)
+        {
+            _context.Users.Remove(User);
+            _context.SaveChanges();
+        }
     }
 }

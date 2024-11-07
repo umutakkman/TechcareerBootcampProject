@@ -3,7 +3,7 @@
 <div class="container my-5">
     <h1 class="mb-4 text-center">Araba Listesi</h1>
     <div class="text-end mb-3">
-        <a asp-controller="Admin" asp-action="Create" class="btn btn-secondary">
+        <a asp-controller="Admin" asp-action="CreateCar" class="btn btn-secondary">
             <i class="bi bi-plus-circle"></i> Araba Ekle
         </a>
     </div>
@@ -47,11 +47,11 @@
                             }
                         </td>
                         <td class="text-center">
-                            <a asp-controller="Admin" asp-action="Edit" asp-route-id="@car.CarID"
+                            <a asp-controller="Admin" asp-action="EditCar" asp-route-id="@car.CarID"
                                 class="btn btn-warning btn-sm me-2">
                                 <i class="bi bi-pencil-fill"></i> Detaylar
                             </a>
-                            <a asp-controller="Admin" asp-action="Delete" asp-route-id="@car.CarID"
+                            <a asp-controller="Admin" asp-action="DeleteCar" asp-route-id="@car.CarID"
                                 class="btn btn-danger btn-sm">
                                 <i class="bi bi-trash-fill"></i> Sil
                             </a>
