@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "3RLai/w32MQ7jGYE+RG6rP5Hr0J/mp2dV5cQUFutxK0=",
+  "Hash": "1KswkQ2wXF+UNlopWd3My29DBJH+ua9CmihunFoFK0Q=",
   "Source": "TechcareerBootcampFest4Project",
   "BasePath": "_content/TechcareerBootcampFest4Project",
   "Mode": "Default",
@@ -34,6 +34,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\style.css"
+    },
+    {
+      "Identity": "D:\\Kodlar\\TechcareerBootcampProject\\wwwroot\\img\\3cd7ff9e-736f-44de-b598-2e720db86a02.png",
+      "SourceId": "TechcareerBootcampFest4Project",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Kodlar\\TechcareerBootcampProject\\wwwroot\\",
+      "BasePath": "_content/TechcareerBootcampFest4Project",
+      "RelativePath": "img/3cd7ff9e-736f-44de-b598-2e720db86a02.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\3cd7ff9e-736f-44de-b598-2e720db86a02.png"
     },
     {
       "Identity": "D:\\Kodlar\\TechcareerBootcampProject\\wwwroot\\img\\911.png",
@@ -72,6 +91,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\altima.png"
+    },
+    {
+      "Identity": "D:\\Kodlar\\TechcareerBootcampProject\\wwwroot\\img\\b817d771-9047-417c-a4c4-acb56c28cf36.png",
+      "SourceId": "TechcareerBootcampFest4Project",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Kodlar\\TechcareerBootcampProject\\wwwroot\\",
+      "BasePath": "_content/TechcareerBootcampFest4Project",
+      "RelativePath": "img/b817d771-9047-417c-a4c4-acb56c28cf36.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\b817d771-9047-417c-a4c4-acb56c28cf36.png"
     },
     {
       "Identity": "D:\\Kodlar\\TechcareerBootcampProject\\wwwroot\\img\\c-class.png",

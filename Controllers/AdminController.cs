@@ -13,7 +13,6 @@ namespace TechcareerBootcampFest4Project.Controllers
 
         private readonly ICarRepository _carRepository;
         private readonly ICategoryRepository _categoryRepository;
-
         private readonly IUserRepository _userRepository;
 
         public AdminController(ICarRepository carRepository, SiteContext context, ICategoryRepository categoryRepository, IUserRepository userRepository)
@@ -391,7 +390,7 @@ namespace TechcareerBootcampFest4Project.Controllers
                 }
 
                 _userRepository.DeleteUser(existingUser);
-                return RedirectToAction("CarList");
+                return RedirectToAction("UserList");
             }
             else
             {
