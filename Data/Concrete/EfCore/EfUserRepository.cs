@@ -1,28 +1,29 @@
-using TechcareerBootcampFest4Project.Data.Abstract;
-using TechcareerBootcampFest4Project.Data.Concrete.EfCore;
-using TechcareerBootcampFest4Project.Entity;
+using CarRentalWebsite.Data.Concrete;
+using CarRentalWebsite.Data.Abstract;
+using CarRentalWebsite.Models;
 
-namespace TechcareerBootcampFest4Project.Data.Concrete
+namespace CarRentalWebsite.Data.Concrete.EfCore;
+
+public class EfUserRepository : IUserRepository
 {
-    public class EfUserRepository : IUserRepository
+    private readonly SiteContext _context;
+
+    public EfUserRepository(SiteContext context)
     {
-        private SiteContext _context;
-        public EfUserRepository(SiteContext context)
-        {
-            _context = context;
-        }
-        public IQueryable<User> Users => _context.Users;
+        _context = context;
+    }
 
-        public void AddUser(User User)
-        {
-            _context.Users.Add(User);
-            _context.SaveChanges();
-        }
+    public IQueryable<User> Users => _context.Users;
 
-        public void DeleteUser(User User)
-        {
-            _context.Users.Remove(User);
-            _context.SaveChanges();
-        }
+    public void AddUser(User user)
+    {
+        _context.Users.Add(user);
+        _context.SaveChanges();
+    }
+
+    public void DeleteUser(User user)
+    {
+        _context.Users.Remove(user);
+        _context.SaveChanges();
     }
 }

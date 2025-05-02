@@ -1,20 +1,20 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using TechcareerBootcampFest4Project.Data.Abstract;
+using CarRentalWebsite.Data.Abstract;
 
-namespace TechcareerBootcampFest4Project.ViewComponents{
+namespace CarRentalWebsite.ViewComponents;
 
-    public class CategoryMenu : ViewComponent{
+public class CategoryMenu : ViewComponent
+{
+    private readonly ICategoryRepository _categoryRepository;
 
-        private ICategoryRepository _categoryRepository;
+    public CategoryMenu(ICategoryRepository categoryRepository)
+    {
+        _categoryRepository = categoryRepository;
+    }
 
-        public CategoryMenu(ICategoryRepository categoryRepository)
-        {
-            _categoryRepository = categoryRepository;
-        }
-
-        public async Task<IViewComponentResult> InvokeAsync(){
-            return View(await _categoryRepository.Categories.ToListAsync());
-        }
+    public async Task<IViewComponentResult> InvokeAsync()
+    {
+        return View(await _categoryRepository.Categories.ToListAsync());
     }
 }

@@ -1,14 +1,15 @@
+using CarRentalWebsite.Data.Abstract;
+using CarRentalWebsite.Data.Concrete;
+using CarRentalWebsite.Data.Concrete.EfCore;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
-using TechcareerBootcampFest4Project.Data.Abstract;
-using TechcareerBootcampFest4Project.Data.Concrete;
-using TechcareerBootcampFest4Project.Data.Concrete.EfCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllersWithViews();
 
-builder.Services.AddDbContext<SiteContext>(options =>{
+builder.Services.AddDbContext<SiteContext>(options =>
+{
     options.UseSqlite(builder.Configuration["ConnectionStrings:Sql_connection"]);
 });
 
@@ -26,17 +27,17 @@ app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();
 
-SeedData.TestVerileriniDoldur(app);
+SeedData.FillInitialData(app);
 
 app.MapControllerRoute(
-    name: "cars_details",
-    pattern: "cars/{url}",
-    defaults: new { controller = "Home", action = "Details" }
+    "cars_details",
+    "cars/{url}",
+    new { controller = "Home", action = "Details" }
 );
 
 app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}"
+    "default",
+    "{controller=Home}/{action=Index}/{id?}"
 );
 
 app.Run();

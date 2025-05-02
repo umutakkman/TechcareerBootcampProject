@@ -1,53 +1,53 @@
 @model IEnumerable<User>
 
 <div class="container my-5">
-    <h1 class="mb-4 text-center">Kullanıcı Listesi</h1>
-    <div class="table-responsive">
-        <table class="table table-hover table-bordered shadow-sm rounded">
-            <thead class="table-dark">
-                <tr>
-                    <th scope="col">User ID</th>
-                    <th scope="col">Kullanıcı adı</th>
-                    <th scope="col">Ad Soyad</th>
-                    <th scope="col">Email</th>
-                    <th scope="col">Şifre</th>
-                    <th scope="col">İşlemler</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var user in Model)
-                {
-                    <tr>
-                        <td>@user.UserID</td>
-                        <td>@user.Username</td>
-                        <td>@user.NameSurname</td>
-                        <td>@user.Email</td>
-                        <td style="width: 250px;">
-                            <span class="password" data-password="@user.Password">********</span>
-                            <button type="button" class="btn btn-warning btn-sm show-password" style="float: right;">Göster</button>
-                        </td>
-                        <td class="text-center">
-                            <a asp-controller="Admin" asp-action="DeleteUser" asp-route-id="@user.UserID"
-                                class="btn btn-danger btn-sm">
-                                <i class="bi bi-trash-fill"></i> Sil
-                            </a>
-                        </td>
-                    </tr>
-                }
-            </tbody>
-        </table>
-    </div>
+	<h1 class="mb-4 text-center">User List</h1>
+	<div class="table-responsive">
+		<table class="table table-hover table-bordered shadow-sm rounded">
+			<thead class="table-dark">
+			<tr>
+				<th scope="col">User ID</th>
+				<th scope="col">Username</th>
+				<th scope="col">Full Name</th>
+				<th scope="col">Email</th>
+				<th scope="col">Password</th>
+				<th scope="col">Actions</th>
+			</tr>
+			</thead>
+			<tbody>
+			@foreach (var user in Model)
+			{
+				<tr>
+					<td>@user.UserID</td>
+					<td>@user.Username</td>
+					<td>@user.NameSurname</td>
+					<td>@user.Email</td>
+					<td style="width: 250px;">
+						<span class="password" data-password="@user.Password">********</span>
+						<button type="button" class="btn btn-warning btn-sm show-password" style="float: right;">Show</button>
+					</td>
+					<td class="text-center">
+						<a asp-controller="Admin" asp-action="DeleteUser" asp-route-id="@user.UserID"
+						   class="btn btn-danger btn-sm">
+							<i class="bi bi-trash-fill"></i> Delete
+						</a>
+					</td>
+				</tr>
+			}
+			</tbody>
+		</table>
+	</div>
 </div>
 
-    <script>
+<script>
         document.addEventListener('DOMContentLoaded', function () {
             document.querySelectorAll('.show-password').forEach(button => {
                 button.addEventListener('click', function () {
                     const passwordSpan = this.previousElementSibling;
                     const isHidden = passwordSpan.textContent === '********';
                     passwordSpan.textContent = isHidden ? passwordSpan.getAttribute('data-password') : '********';
-                    this.textContent = isHidden ? 'Gizle' : 'Göster';
+                    this.textContent = isHidden ? 'Hide' : 'Show';
                 });
             });
         });
-    </script>
+</script>

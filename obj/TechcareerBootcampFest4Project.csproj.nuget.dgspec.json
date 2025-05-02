@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\User\\source\\repos\\TechcareerBootcampProject\\TechcareerBootcampFest4Project.csproj": {}
+    "C:\\Users\\User\\Source\\Repos\\TechcareerBootcampProject\\TechcareerBootcampFest4Project.csproj": {}
   },
   "projects": {
-    "C:\\Users\\User\\source\\repos\\TechcareerBootcampProject\\TechcareerBootcampFest4Project.csproj": {
+    "C:\\Users\\User\\Source\\Repos\\TechcareerBootcampProject\\TechcareerBootcampFest4Project.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\source\\repos\\TechcareerBootcampProject\\TechcareerBootcampFest4Project.csproj",
+        "projectUniqueName": "C:\\Users\\User\\Source\\Repos\\TechcareerBootcampProject\\TechcareerBootcampFest4Project.csproj",
         "projectName": "TechcareerBootcampFest4Project",
-        "projectPath": "C:\\Users\\User\\source\\repos\\TechcareerBootcampProject\\TechcareerBootcampFest4Project.csproj",
+        "projectPath": "C:\\Users\\User\\Source\\Repos\\TechcareerBootcampProject\\TechcareerBootcampFest4Project.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\source\\repos\\TechcareerBootcampProject\\obj\\",
+        "outputPath": "C:\\Users\\User\\Source\\Repos\\TechcareerBootcampProject\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

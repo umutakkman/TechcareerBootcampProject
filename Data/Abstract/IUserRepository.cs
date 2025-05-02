@@ -1,12 +1,10 @@
-using TechcareerBootcampFest4Project.Entity;
+using CarRentalWebsite.Models;
 
-namespace TechcareerBootcampFest4Project.Data.Abstract
+namespace CarRentalWebsite.Data.Abstract;
+
+public interface IUserRepository
 {
-
-    public interface IUserRepository
-    {
-        IQueryable<User> Users { get; }
-        void AddUser(User User);
-        void DeleteUser(User User);
-    }
+    IQueryable<User> Users { get; }
+    void AddUser(User user);
+    void DeleteUser(User user);
 }

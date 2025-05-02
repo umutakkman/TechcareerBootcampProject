@@ -1,16 +1,17 @@
-using TechcareerBootcampFest4Project.Data.Abstract;
-using TechcareerBootcampFest4Project.Data.Concrete.EfCore;
-using TechcareerBootcampFest4Project.Entity;
+using CarRentalWebsite.Data.Concrete;
+using CarRentalWebsite.Data.Abstract;
+using CarRentalWebsite.Models;
 
-namespace TechcareerBootcampFest4Project.Data.Concrete
+namespace CarRentalWebsite.Data.Concrete.EfCore;
+
+public class EfCategoryRepository : ICategoryRepository
 {
-    public class EfCategoryRepository : ICategoryRepository
+    private readonly SiteContext _context;
+
+    public EfCategoryRepository(SiteContext context)
     {
-        private SiteContext _context;
-        public EfCategoryRepository(SiteContext context)
-        {
-            _context = context;
-        }
-        public IQueryable<Category> Categories => _context.Categories;
+        _context = context;
     }
+
+    public IQueryable<Category> Categories => _context.Categories;
 }

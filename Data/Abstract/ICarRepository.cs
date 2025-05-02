@@ -1,13 +1,11 @@
-using TechcareerBootcampFest4Project.Entity;
+using CarRentalWebsite.Models;
 
-namespace TechcareerBootcampFest4Project.Data.Abstract
+namespace CarRentalWebsite.Data.Abstract;
+
+public interface ICarRepository
 {
-
-    public interface ICarRepository
-    {
-        IQueryable<Car> Cars { get; }
-        void AddCar(Car car);
-        void DeleteCar(Car car);
-        void UpdateCar(Car car);
-    }
+    IQueryable<Car> Cars { get; }
+    void AddCar(Car car);
+    void DeleteCar(Car car);
+    void UpdateCar(Car car);
 }

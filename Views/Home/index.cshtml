@@ -1,97 +1,96 @@
 @model CarFilterViewModel
 
 <div class="container">
-    <form method="get" asp-controller="Home" asp-action="Index">
-        <div class="row mb-3">
-            <div class="col-md-7 p-0">
-                <vc:category-menu></vc:category-menu>
-            </div>
-            <div class="col-md-4 d-flex">
-                <div class="form-group mb-3 pe-2">
-                    <label for="minPrice">Minimum Ücret</label>
-                    <input type="number" asp-for="MinPrice" class="form-control" step="100">
-                </div>
-                <div class="form-group mb-3">
-                    <label for="maxPrice">Maximum Ücret</label>
-                    <input type="number" asp-for="MaxPrice" class="form-control" step="100">
-                </div>
-            </div>
-            <div class="col-md-1 d-flex align-items-center p-0 justify-content-end">
-                <button type="submit" class="btn" style="background-color: #FF5722; color: white">Filtrele</button>
-            </div>
-        </div>
-    </form>
-</div>
+	<form method="get" asp-controller="Home" asp-action="Index">
+		<div class="row mb-3">
+			<div class="col-md-7 p-0">
+				<vc:category-menu></vc:category-menu>
+			</div>
+			<div class="col-md-4 d-flex">
+				<div class="form-group mb-3 pe-2">
+					<label for="minPrice">Minimum Price</label>
+					<input type="number" asp-for="MinPrice" class="form-control" step="100">
+				</div>
+				<div class="form-group mb-3">
+					<label for="maxPrice">Maximum Price</label>
+					<input type="number" asp-for="MaxPrice" class="form-control" step="100">
+				</div>
+			</div>
+			<div class="col-md-1 d-flex align-items-center p-0 justify-content-end">
+				<button type="submit" class="btn" style="background-color: #FF5722; color: white">Filter</button>
+			</div>
+		</div>
+	</form>
 </div>
 
 <div class="container">
-    <div class="row">
-        @foreach (var car in Model.Cars)
-        {
-            <div class="col-lg-4 mb-4">
-                <div class="card h-100">
-                    <img src="~/img/@car.Image" class="card-img-top" alt="@car.Title">
-                    <div class="card-body">
-                        <h5 class="card-title">@car.Title</h5>
-                        <p class="card-text">Marka: @car.Brand</p>
-                        <p class="card-text">Model: @car.Model</p>
-                        <p class="card-text">Koltuk Sayısı: @car.Seats</p>
-                        <p class="card-text">Günlük Kira Ücreti: @car.RentPrice.ToString("C")</p>
-                    </div>
-                    <div class="card-footer">
-                        <a href="/cars/@car.Url" class="btn" style="background-color: #FF5722; color: white;">Detayları Görüntüle</a>
-                    </div>
-                </div>
-            </div>
-        }
-    </div>
-    <nav aria-label="Sayfalama">
-        <ul class="pagination">
-            @if (Model.HasPreviousPage)
-            {
-                <li class="page-item">
-                    <a class="page-link" style="background-color: #1A2630; color: white;" asp-controller="Home" asp-action="Index" 
-                    asp-route-page="@(Model.PageNumber - 1)" 
-                    asp-route-searchString="@ViewBag.searchString" 
-                    asp-route-brand="@ViewBag.brand" 
-                    asp-route-type="@ViewBag.type" 
-                    asp-route-seats="@ViewBag.seats" 
-                    asp-route-minPrice="@ViewBag.minPrice" 
-                    asp-route-maxPrice="@ViewBag.maxPrice">
-                        Önceki
-                    </a>
-                </li>
-            }
-            @for (int i = 1; i <= Model.TotalPages; i++)
-            {
-                <li class="page-item @(i == Model.PageNumber ? "active" : "")">
-                    <a class="page-link" style="background-color: #1A2630; color: white;" asp-controller="Home" asp-action="Index" 
-                    asp-route-page="@i"
-                    asp-route-searchString="@ViewBag.searchString" 
-                    asp-route-brand="@ViewBag.brand" 
-                    asp-route-type="@ViewBag.type" 
-                    asp-route-seats="@ViewBag.seats" 
-                    asp-route-minPrice="@ViewBag.minPrice" 
-                    asp-route-maxPrice="@ViewBag.maxPrice">
-                        @i
-                    </a>
-                </li>
-            }
-            @if (Model.HasNextPage)
-            {
-                <li class="page-item">
-                    <a class="page-link" style="background-color: #1A2630; color: white;" asp-controller="Home" asp-action="Index" 
-                    asp-route-page="@(Model.PageNumber + 1)"
-                    asp-route-searchString="@ViewBag.searchString" 
-                    asp-route-brand="@ViewBag.brand" 
-                    asp-route-type="@ViewBag.type" 
-                    asp-route-seats="@ViewBag.seats" 
-                    asp-route-minPrice="@ViewBag.minPrice" 
-                    asp-route-maxPrice="@ViewBag.maxPrice">
-                        Sonraki
-                    </a>
-                </li>
-            }
-        </ul>
-    </nav>
+	<div class="row">
+		@foreach (var car in Model.Cars)
+		{
+			<div class="col-lg-4 mb-4">
+				<div class="card h-100">
+					<img src="~/img/@car.Image" class="card-img-top" alt="@car.Title">
+					<div class="card-body">
+						<h5 class="card-title">@car.Title</h5>
+						<p class="card-text">Brand: @car.Brand</p>
+						<p class="card-text">Model: @car.Model</p>
+						<p class="card-text">Number of Seats: @car.Seats</p>
+						<p class="card-text">Daily Rental Price: @car.RentPrice.ToString("C")</p>
+					</div>
+					<div class="card-footer">
+						<a href="/cars/@car.Url" class="btn" style="background-color: #FF5722; color: white;">View Details</a>
+					</div>
+				</div>
+			</div>
+		}
+	</div>
+	<nav aria-label="Pagination">
+		<ul class="pagination">
+			@if (Model.HasPreviousPage)
+			{
+				<li class="page-item">
+					<a class="page-link" style="background-color: #1A2630; color: white;" asp-controller="Home" asp-action="Index"
+					   asp-route-page="@(Model.PageNumber - 1)"
+					   asp-route-searchString="@ViewBag.searchString"
+					   asp-route-brand="@ViewBag.brand"
+					   asp-route-type="@ViewBag.type"
+					   asp-route-seats="@ViewBag.seats"
+					   asp-route-minPrice="@ViewBag.minPrice"
+					   asp-route-maxPrice="@ViewBag.maxPrice">
+						Previous
+					</a>
+				</li>
+			}
+			@for (var i = 1; i <= Model.TotalPages; i++)
+			{
+				<li class="page-item @(i == Model.PageNumber ? "active" : "")">
+					<a class="page-link" style="background-color: #1A2630; color: white;" asp-controller="Home" asp-action="Index"
+					   asp-route-page="@i"
+					   asp-route-searchString="@ViewBag.searchString"
+					   asp-route-brand="@ViewBag.brand"
+					   asp-route-type="@ViewBag.type"
+					   asp-route-seats="@ViewBag.seats"
+					   asp-route-minPrice="@ViewBag.minPrice"
+					   asp-route-maxPrice="@ViewBag.maxPrice">
+						@i
+					</a>
+				</li>
+			}
+			@if (Model.HasNextPage)
+			{
+				<li class="page-item">
+					<a class="page-link" style="background-color: #1A2630; color: white;" asp-controller="Home" asp-action="Index"
+					   asp-route-page="@(Model.PageNumber + 1)"
+					   asp-route-searchString="@ViewBag.searchString"
+					   asp-route-brand="@ViewBag.brand"
+					   asp-route-type="@ViewBag.type"
+					   asp-route-seats="@ViewBag.seats"
+					   asp-route-minPrice="@ViewBag.minPrice"
+					   asp-route-maxPrice="@ViewBag.maxPrice">
+						Next
+					</a>
+				</li>
+			}
+		</ul>
+	</nav>
 </div>

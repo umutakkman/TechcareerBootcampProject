@@ -1,10 +1,8 @@
-using TechcareerBootcampFest4Project.Entity;
+using CarRentalWebsite.Models;
 
-namespace TechcareerBootcampFest4Project.Data.Abstract
+namespace CarRentalWebsite.Data.Abstract;
+
+public interface ICategoryRepository
 {
-
-    public interface ICategoryRepository
-    {
-        IQueryable<Category> Categories { get; }
-    }
+    IQueryable<Category> Categories { get; }
 }

@@ -1,17 +1,17 @@
 @model User
 
-<h2 class="text-center my-4">Kullanıcı Sil</h2>
+<h2 class="text-center my-4">Delete User</h2>
 <hr class="mb-4">
 
 <div class="text-center">
-    <p class="fs-5">
-        <b class="text-danger">@Model.Username</b> adlı kullanıcı silinecektir. Emin misiniz?
-    </p>
+	<p class="fs-5">
+		<b class="text-danger">@Model.Username</b> will be deleted. Are you sure?
+	</p>
 
-    <form asp-action="deleteUser" method="post" class="d-inline">
-        <input type="hidden" name="id" value="@Model.UserID">
-        <button type="submit" class="btn btn-danger me-2 px-4">Evet</button>
-    </form>
-    
-    <a asp-action="userlist" class="btn btn-secondary px-4">Hayır</a>
+	<form asp-action="deleteUser" method="post" class="d-inline">
+		<input type="hidden" name="id" value="@Model.UserID">
+		<button type="submit" class="btn btn-danger me-2 px-4">Yes</button>
+	</form>
+
+	<a asp-action="userlist" class="btn btn-secondary px-4">No</a>
 </div>
